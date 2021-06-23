@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CSDL_sellPhone_mainModelStoreContainer" CdmEntityContainer="CSDL_sellPhone_mainEntities">
+    <EntitySetMapping Name="CATEGORY">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.CATEGORY">
+        <MappingFragment StoreEntitySet="CATEGORY">
+          <ScalarProperty Name="catID" ColumnName="catID" />
+          <ScalarProperty Name="catName" ColumnName="catName" />
+          <ScalarProperty Name="catDescription" ColumnName="catDescription" />
+          <ScalarProperty Name="catStatus" ColumnName="catStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="cliID" ColumnName="cliID" />
+          <ScalarProperty Name="cliName" ColumnName="cliName" />
+          <ScalarProperty Name="cliAddress" ColumnName="cliAddress" />
+          <ScalarProperty Name="cliCountry" ColumnName="cliCountry" />
+          <ScalarProperty Name="cliPostOfficeCode" ColumnName="cliPostOfficeCode" />
+          <ScalarProperty Name="cliPhone" ColumnName="cliPhone" />
+          <ScalarProperty Name="cliStatus" ColumnName="cliStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFORMATION_ORDER">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.INFORMATION_ORDER">
+        <MappingFragment StoreEntitySet="INFORMATION_ORDER">
+          <ScalarProperty Name="infoOrderID" ColumnName="infoOrderID" />
+          <ScalarProperty Name="ordID" ColumnName="ordID" />
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+          <ScalarProperty Name="infoOrderSL" ColumnName="infoOrderSL" />
+          <ScalarProperty Name="infoOrderPrice" ColumnName="infoOrderPrice" />
+          <ScalarProperty Name="infoStatus" ColumnName="infoStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERR">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.ORDERR">
+        <MappingFragment StoreEntitySet="ORDERR">
+          <ScalarProperty Name="ordID" ColumnName="ordID" />
+          <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+          <ScalarProperty Name="ordDescription" ColumnName="ordDescription" />
+          <ScalarProperty Name="ordBill" ColumnName="ordBill" />
+          <ScalarProperty Name="ordStatus" ColumnName="ordStatus" />
+          <ScalarProperty Name="cliID" ColumnName="cliID" />
+          <ScalarProperty Name="staID" ColumnName="staID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+          <ScalarProperty Name="prodName" ColumnName="prodName" />
+          <ScalarProperty Name="prodPrice" ColumnName="prodPrice" />
+          <ScalarProperty Name="prodSL" ColumnName="prodSL" />
+          <ScalarProperty Name="prodInit" ColumnName="prodInit" />
+          <ScalarProperty Name="prodCamera" ColumnName="prodCamera" />
+          <ScalarProperty Name="prodMenory" ColumnName="prodMenory" />
+          <ScalarProperty Name="prodReleaseYear" ColumnName="prodReleaseYear" />
+          <ScalarProperty Name="prodRAM" ColumnName="prodRAM" />
+          <ScalarProperty Name="prodDescription" ColumnName="prodDescription" />
+          <ScalarProperty Name="prodStatus" ColumnName="prodStatus" />
+          <ScalarProperty Name="provID" ColumnName="provID" />
+          <ScalarProperty Name="catID" ColumnName="catID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVIDED">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.PROVIDED">
+        <MappingFragment StoreEntitySet="PROVIDED">
+          <ScalarProperty Name="provID" ColumnName="provID" />
+          <ScalarProperty Name="provFullName" ColumnName="provFullName" />
+          <ScalarProperty Name="provName" ColumnName="provName" />
+          <ScalarProperty Name="provAddress" ColumnName="provAddress" />
+          <ScalarProperty Name="provPostOfficeCode" ColumnName="provPostOfficeCode" />
+          <ScalarProperty Name="provCountry" ColumnName="provCountry" />
+          <ScalarProperty Name="provPhone" ColumnName="provPhone" />
+          <ScalarProperty Name="provDescription" ColumnName="provDescription" />
+          <ScalarProperty Name="provStatus" ColumnName="provStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAFF">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.STAFF">
+        <MappingFragment StoreEntitySet="STAFF">
+          <ScalarProperty Name="staID" ColumnName="staID" />
+          <ScalarProperty Name="staName" ColumnName="staName" />
+          <ScalarProperty Name="staBirthday" ColumnName="staBirthday" />
+          <ScalarProperty Name="staAddress" ColumnName="staAddress" />
+          <ScalarProperty Name="staImg" ColumnName="staImg" />
+          <ScalarProperty Name="staPhone" ColumnName="staPhone" />
+          <ScalarProperty Name="staSex" ColumnName="staSex" />
+          <ScalarProperty Name="staDescription" ColumnName="staDescription" />
+          <ScalarProperty Name="staStatus" ColumnName="staStatus" />
+          <ScalarProperty Name="staSalary" ColumnName="staSalary" />
+          <ScalarProperty Name="staPosition" ColumnName="staPosition" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAFF_LOGIN">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.STAFF_LOGIN">
+        <MappingFragment StoreEntitySet="STAFF_LOGIN">
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
+          <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+          <ScalarProperty Name="LoginStatus" ColumnName="LoginStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CSDL_sellPhone_mainModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CSDL_sellPhone_mainModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CSDL_sellPhone_mainModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CSDL_sellPhone_mainModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CSDL_sellPhone_mainModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CSDL_sellPhone_mainModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CSDL_sellPhone_mainModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CSDL_sellPhone_mainModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CSDL_sellPhone_mainModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="COLOR">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.COLOR">
+        <MappingFragment StoreEntitySet="COLOR">
+          <ScalarProperty Name="color4" ColumnName="color4" />
+          <ScalarProperty Name="color3" ColumnName="color3" />
+          <ScalarProperty Name="color2" ColumnName="color2" />
+          <ScalarProperty Name="color1" ColumnName="color1" />
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGES">
+      <EntityTypeMapping TypeName="CSDL_sellPhone_mainModel.IMAGES">
+        <MappingFragment StoreEntitySet="IMAGES">
+          <ScalarProperty Name="img4" ColumnName="img4" />
+          <ScalarProperty Name="img3" ColumnName="img3" />
+          <ScalarProperty Name="img2" ColumnName="img2" />
+          <ScalarProperty Name="img1" ColumnName="img1" />
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="KiemTraLoginMain" FunctionName="CSDL_sellPhone_mainModel.Store.KiemTraLoginMain" />
+    <FunctionImportMapping FunctionImportName="CapNhatTaiKhoan" FunctionName="CSDL_sellPhone_mainModel.Store.CapNhatTaiKhoan" />
+    <FunctionImportMapping FunctionImportName="ThemNhanVien" FunctionName="CSDL_sellPhone_mainModel.Store.ThemNhanVien" />
+    <FunctionImportMapping FunctionImportName="ThemNhanVienLogin" FunctionName="CSDL_sellPhone_mainModel.Store.ThemNhanVienLogin" />
+    <FunctionImportMapping FunctionImportName="LayDanhSachNhanVien" FunctionName="CSDL_sellPhone_mainModel.Store.LayDanhSachNhanVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CSDL_sellPhone_mainModel.LayDanhSachNhanVien_Result">
+          <ScalarProperty Name="staID" ColumnName="staID" />
+          <ScalarProperty Name="staName" ColumnName="staName" />
+          <ScalarProperty Name="staBirthday" ColumnName="staBirthday" />
+          <ScalarProperty Name="staAddress" ColumnName="staAddress" />
+          <ScalarProperty Name="staImg" ColumnName="staImg" />
+          <ScalarProperty Name="staPhone" ColumnName="staPhone" />
+          <ScalarProperty Name="staSex" ColumnName="staSex" />
+          <ScalarProperty Name="staDescription" ColumnName="staDescription" />
+          <ScalarProperty Name="staStatus" ColumnName="staStatus" />
+          <ScalarProperty Name="staSalary" ColumnName="staSalary" />
+          <ScalarProperty Name="staPosition" ColumnName="staPosition" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

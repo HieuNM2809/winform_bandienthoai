@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSDL_sellPhone_mainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="catID" />
+    </Key>
+    <Property Name="catID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catName" Type="nvarchar" MaxLength="50" />
+    <Property Name="catDescription" Type="ntext" />
+    <Property Name="catStatus" Type="ntext" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="cliID" />
+    </Key>
+    <Property Name="cliID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cliName" Type="nvarchar" MaxLength="30" />
+    <Property Name="cliAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="cliCountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="cliPostOfficeCode" Type="char" MaxLength="10" />
+    <Property Name="cliPhone" Type="char" MaxLength="10" />
+    <Property Name="cliStatus" Type="ntext" />
+  </EntityType>
+  <EntityType Name="COLOR">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="int" Nullable="false" />
+    <Property Name="color1" Type="nvarchar" MaxLength="50" />
+    <Property Name="color2" Type="nvarchar" MaxLength="50" />
+    <Property Name="color3" Type="nvarchar" MaxLength="50" />
+    <Property Name="color4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IMAGES">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="int" Nullable="false" />
+    <Property Name="img1" Type="nvarchar" MaxLength="50" />
+    <Property Name="img2" Type="nvarchar" MaxLength="50" />
+    <Property Name="img3" Type="nvarchar" MaxLength="50" />
+    <Property Name="img4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="INFORMATION_ORDER">
+    <Key>
+      <PropertyRef Name="infoOrderID" />
+    </Key>
+    <Property Name="infoOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ordID" Type="int" />
+    <Property Name="prodID" Type="int" />
+    <Property Name="infoOrderSL" Type="int" />
+    <Property Name="infoOrderPrice" Type="money" />
+    <Property Name="infoStatus" Type="ntext" />
+  </EntityType>
+  <EntityType Name="ORDERR">
+    <Key>
+      <PropertyRef Name="ordID" />
+    </Key>
+    <Property Name="ordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ordDate" Type="date" />
+    <Property Name="ordDescription" Type="ntext" />
+    <Property Name="ordBill" Type="bit" />
+    <Property Name="ordStatus" Type="ntext" />
+    <Property Name="cliID" Type="int" />
+    <Property Name="staID" Type="int" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prodName" Type="nvarchar" MaxLength="50" />
+    <Property Name="prodPrice" Type="money" />
+    <Property Name="prodSL" Type="int" />
+    <Property Name="prodInit" Type="nvarchar" MaxLength="20" />
+    <Property Name="prodCamera" Type="nvarchar" MaxLength="50" />
+    <Property Name="prodMenory" Type="int" />
+    <Property Name="prodReleaseYear" Type="int" />
+    <Property Name="prodRAM" Type="int" />
+    <Property Name="prodDescription" Type="ntext" />
+    <Property Name="prodStatus" Type="ntext" />
+    <Property Name="provID" Type="int" />
+    <Property Name="catID" Type="int" />
+  </EntityType>
+  <EntityType Name="PROVIDED">
+    <Key>
+      <PropertyRef Name="provID" />
+    </Key>
+    <Property Name="provID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="provFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="provName" Type="nvarchar" MaxLength="20" />
+    <Property Name="provAddress" Type="nvarchar" MaxLength="250" />
+    <Property Name="provPostOfficeCode" Type="char" MaxLength="10" />
+    <Property Name="provCountry" Type="nvarchar" MaxLength="25" />
+    <Property Name="provPhone" Type="char" MaxLength="10" />
+    <Property Name="provDescription" Type="ntext" />
+    <Property Name="provStatus" Type="ntext" />
+  </EntityType>
+  <EntityType Name="STAFF">
+    <Key>
+      <PropertyRef Name="staID" />
+    </Key>
+    <Property Name="staID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staName" Type="nvarchar" MaxLength="30" />
+    <Property Name="staBirthday" Type="date" />
+    <Property Name="staAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="staImg" Type="image" />
+    <Property Name="staPhone" Type="char" MaxLength="10" />
+    <Property Name="staSex" Type="bit" />
+    <Property Name="staDescription" Type="ntext" />
+    <Property Name="staSalary" Type="money" />
+    <Property Name="staPosition" Type="nvarchar" MaxLength="20" />
+    <Property Name="LoginID" Type="int" />
+    <Property Name="staStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="STAFF_LOGIN">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginUserName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LoginPassword" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LoginStatus" Type="ntext" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_catID">
+    <End Role="CATEGORY" Type="Self.CATEGORY" Multiplicity="0..1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORY">
+        <PropertyRef Name="catID" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="catID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliID">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="cliID" />
+      </Principal>
+      <Dependent Role="ORDERR">
+        <PropertyRef Name="cliID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginID">
+    <End Role="STAFF_LOGIN" Type="Self.STAFF_LOGIN" Multiplicity="0..1" />
+    <End Role="STAFF" Type="Self.STAFF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STAFF_LOGIN">
+        <PropertyRef Name="LoginID" />
+      </Principal>
+      <Dependent Role="STAFF">
+        <PropertyRef Name="LoginID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordID">
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="0..1" />
+    <End Role="INFORMATION_ORDER" Type="Self.INFORMATION_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERR">
+        <PropertyRef Name="ordID" />
+      </Principal>
+      <Dependent Role="INFORMATION_ORDER">
+        <PropertyRef Name="ordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+    <End Role="INFORMATION_ORDER" Type="Self.INFORMATION_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="INFORMATION_ORDER">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID_color">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="COLOR" Type="Self.COLOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="COLOR">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID_img">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="IMAGES" Type="Self.IMAGES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="IMAGES">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_provID">
+    <End Role="PROVIDED" Type="Self.PROVIDED" Multiplicity="0..1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVIDED">
+        <PropertyRef Name="provID" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="provID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staID">
+    <End Role="STAFF_LOGIN" Type="Self.STAFF_LOGIN" Multiplicity="0..1" />
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STAFF_LOGIN">
+        <PropertyRef Name="LoginID" />
+      </Principal>
+      <Dependent Role="ORDERR">
+        <PropertyRef Name="staID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CapNhatTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="nvarchar" Mode="In" />
+    <Parameter Name="userNew" Type="nvarchar" Mode="In" />
+    <Parameter Name="passNew" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="FuncKiemTraLoginMain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="user" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KiemTraLoginMain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="LayDanhSachNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ThemNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="staName" Type="nvarchar" Mode="In" />
+    <Parameter Name="staBirthday" Type="date" Mode="In" />
+    <Parameter Name="staAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="staPhone" Type="char" Mode="In" />
+    <Parameter Name="staSex" Type="bit" Mode="In" />
+    <Parameter Name="staDescription" Type="ntext" Mode="In" />
+    <Parameter Name="staStatus" Type="int" Mode="In" />
+    <Parameter Name="staSalary" Type="money" Mode="In" />
+    <Parameter Name="staPosition" Type="nvarchar" Mode="In" />
+    <Parameter Name="LoginID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ThemNhanVienLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CSDL_sellPhone_mainModelStoreContainer">
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COLOR" EntityType="Self.COLOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMAGES" EntityType="Self.IMAGES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INFORMATION_ORDER" EntityType="Self.INFORMATION_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDERR" EntityType="Self.ORDERR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVIDED" EntityType="Self.PROVIDED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STAFF" EntityType="Self.STAFF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STAFF_LOGIN" EntityType="Self.STAFF_LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_catID" Association="Self.FK_catID">
+      <End Role="CATEGORY" EntitySet="CATEGORY" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliID" Association="Self.FK_cliID">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="ORDERR" EntitySet="ORDERR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginID" Association="Self.FK_LoginID">
+      <End Role="STAFF_LOGIN" EntitySet="STAFF_LOGIN" />
+      <End Role="STAFF" EntitySet="STAFF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordID" Association="Self.FK_ordID">
+      <End Role="ORDERR" EntitySet="ORDERR" />
+      <End Role="INFORMATION_ORDER" EntitySet="INFORMATION_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID" Association="Self.FK_prodID">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="INFORMATION_ORDER" EntitySet="INFORMATION_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID_color" Association="Self.FK_prodID_color">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="COLOR" EntitySet="COLOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID_img" Association="Self.FK_prodID_img">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="IMAGES" EntitySet="IMAGES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_provID" Association="Self.FK_provID">
+      <End Role="PROVIDED" EntitySet="PROVIDED" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staID" Association="Self.FK_staID">
+      <End Role="STAFF_LOGIN" EntitySet="STAFF_LOGIN" />
+      <End Role="ORDERR" EntitySet="ORDERR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

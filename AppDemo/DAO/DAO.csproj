@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91D2D862-69D4-48DF-8507-49AF9A06C92F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CATEGORY.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COLOR.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_sellPhone_mainModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_sellPhone_mainModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_sellPhone_mainModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_sellPhone_mainModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_sellPhone_mainModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO_BaoTri.cs" />
+    <Compile Include="DAO_DanhSachNCC.cs" />
+    <Compile Include="DAO_DanhSachSanPham.cs" />
+    <Compile Include="DAO_DoiMatKhau.cs" />
+    <Compile Include="DAO_DanhSachNhanVien.cs" />
+    <Compile Include="DAO_DonBan.cs" />
+    <Compile Include="DAO_KhachHang.cs" />
+    <Compile Include="DAO_LoginMain.cs" />
+    <Compile Include="DAO_Navigation.cs" />
+    <Compile Include="DAO_NhapHang.cs" />
+    <Compile Include="DAO_TaoNhanVien.cs" />
+    <Compile Include="DAO_ThemNhaSanXuat.cs" />
+    <Compile Include="DAO_ThongKe.cs" />
+    <Compile Include="IMAGES.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INFORMATION_ORDER.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayDanhSachNhanVien_Result.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDERR.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROVIDED.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_LOGIN.cs">
+      <DependentUpon>CSDL_sellPhone_mainModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Connecter_Tier\Connecter_Tier.csproj">
+      <Project>{98504229-32a8-459d-b536-572faf588212}</Project>
+      <Name>Connecter_Tier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{4dd8caf1-2f5d-441e-a170-5004dbed86c3}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="CSDL_sellPhone_mainModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CSDL_sellPhone_mainModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CSDL_sellPhone_mainModel.edmx.diagram">
+      <DependentUpon>CSDL_sellPhone_mainModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSDL_sellPhone_mainModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_sellPhone_mainModel.edmx</DependentUpon>
+      <LastGenOutput>CSDL_sellPhone_mainModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CSDL_sellPhone_mainModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_sellPhone_mainModel.edmx</DependentUpon>
+      <LastGenOutput>CSDL_sellPhone_mainModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

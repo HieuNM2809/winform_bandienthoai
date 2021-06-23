@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4331fbd9c5bd44ab835f53ea9c768a0a" Name="Diagram1">
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.CATEGORY" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.CLIENT" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.COLOR" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.IMAGES" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.INFORMATION_ORDER" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.ORDERR" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.PRODUCT" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.PROVIDED" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.STAFF" Width="1.5" PointX="6" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDL_sellPhone_mainModel.STAFF_LOGIN" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_catID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_cliID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_prodID_color" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_prodID_img" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_ordID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_prodID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_staID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_provID" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDL_sellPhone_mainModel.FK_LoginID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

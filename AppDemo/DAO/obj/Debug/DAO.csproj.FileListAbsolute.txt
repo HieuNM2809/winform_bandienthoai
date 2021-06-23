@@ -1,0 +1,16 @@
+D:\Winform C#\AppDemo\DAO\bin\Debug\DAO.dll.config
+D:\Winform C#\AppDemo\DAO\bin\Debug\DAO.dll
+D:\Winform C#\AppDemo\DAO\bin\Debug\DAO.pdb
+D:\Winform C#\AppDemo\DAO\bin\Debug\Connecter_Tier.dll
+D:\Winform C#\AppDemo\DAO\bin\Debug\DTO.dll
+D:\Winform C#\AppDemo\DAO\bin\Debug\EntityFramework.dll
+D:\Winform C#\AppDemo\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Winform C#\AppDemo\DAO\bin\Debug\Connecter_Tier.pdb
+D:\Winform C#\AppDemo\DAO\bin\Debug\DTO.pdb
+D:\Winform C#\AppDemo\DAO\bin\Debug\EntityFramework.xml
+D:\Winform C#\AppDemo\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Winform C#\AppDemo\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\Winform C#\AppDemo\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Winform C#\AppDemo\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Winform C#\AppDemo\DAO\obj\Debug\DAO.dll
+D:\Winform C#\AppDemo\DAO\obj\Debug\DAO.pdb

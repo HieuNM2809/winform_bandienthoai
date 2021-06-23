@@ -1,0 +1,6 @@
+D:\Winform C#\AppDemo\Connecter_Tier\bin\Debug\Connecter_Tier.dll
+D:\Winform C#\AppDemo\Connecter_Tier\bin\Debug\Connecter_Tier.pdb
+D:\Winform C#\AppDemo\Connecter_Tier\obj\Debug\Connecter_Tier.csprojAssemblyReference.cache
+D:\Winform C#\AppDemo\Connecter_Tier\obj\Debug\Connecter_Tier.csproj.CoreCompileInputs.cache
+D:\Winform C#\AppDemo\Connecter_Tier\obj\Debug\Connecter_Tier.dll
+D:\Winform C#\AppDemo\Connecter_Tier\obj\Debug\Connecter_Tier.pdb

@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSDL_sellPhone_mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="catID" />
+    </Key>
+    <Property Name="catID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="catDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="catStatus" Type="Int32" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_catID" FromRole="CATEGORY" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="cliID" />
+    </Key>
+    <Property Name="cliID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cliName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="cliAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cliCountry" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="cliPostOfficeCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="cliPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="cliStatus" Type="Int32" />
+    <NavigationProperty Name="ORDERR" Relationship="Self.FK_cliID" FromRole="CLIENT" ToRole="ORDERR" />
+  </EntityType>
+  <EntityType Name="COLOR">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="Int32" Nullable="false" />
+    <Property Name="color1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="color2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="color3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="color4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_prodID_color" FromRole="COLOR" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="IMAGES">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="Int32" Nullable="false" />
+    <Property Name="img1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_prodID_img" FromRole="IMAGES" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="INFORMATION_ORDER">
+    <Key>
+      <PropertyRef Name="infoOrderID" />
+    </Key>
+    <Property Name="infoOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ordID" Type="Int32" />
+    <Property Name="prodID" Type="Int32" />
+    <Property Name="infoOrderSL" Type="Int32" />
+    <Property Name="infoOrderPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="infoStatus" Type="Int32" />
+    <NavigationProperty Name="ORDERR" Relationship="Self.FK_ordID" FromRole="INFORMATION_ORDER" ToRole="ORDERR" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_prodID" FromRole="INFORMATION_ORDER" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="ORDERR">
+    <Key>
+      <PropertyRef Name="ordID" />
+    </Key>
+    <Property Name="ordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ordDate" Type="DateTime" Precision="0" />
+    <Property Name="ordDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ordBill" Type="Boolean" />
+    <Property Name="cliID" Type="Int32" />
+    <Property Name="staID" Type="Int32" />
+    <Property Name="ordStatus" Type="Int32" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_cliID" FromRole="ORDERR" ToRole="CLIENT" />
+    <NavigationProperty Name="INFORMATION_ORDER" Relationship="Self.FK_ordID" FromRole="ORDERR" ToRole="INFORMATION_ORDER" />
+    <NavigationProperty Name="STAFF_LOGIN" Relationship="Self.FK_staID" FromRole="ORDERR" ToRole="STAFF_LOGIN" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prodPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="prodSL" Type="Int32" />
+    <Property Name="prodInit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="prodCamera" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prodMenory" Type="Int32" />
+    <Property Name="prodReleaseYear" Type="Int32" />
+    <Property Name="prodRAM" Type="Int32" />
+    <Property Name="prodDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="provID" Type="Int32" />
+    <Property Name="catID" Type="Int32" />
+    <Property Name="prodStatus" Type="Int32" />
+    <NavigationProperty Name="CATEGORY" Relationship="Self.FK_catID" FromRole="PRODUCT" ToRole="CATEGORY" />
+    <NavigationProperty Name="COLOR" Relationship="Self.FK_prodID_color" FromRole="PRODUCT" ToRole="COLOR" />
+    <NavigationProperty Name="IMAGES" Relationship="Self.FK_prodID_img" FromRole="PRODUCT" ToRole="IMAGES" />
+    <NavigationProperty Name="INFORMATION_ORDER" Relationship="Self.FK_prodID" FromRole="PRODUCT" ToRole="INFORMATION_ORDER" />
+    <NavigationProperty Name="PROVIDED" Relationship="Self.FK_provID" FromRole="PRODUCT" ToRole="PROVIDED" />
+  </EntityType>
+  <EntityType Name="PROVIDED">
+    <Key>
+      <PropertyRef Name="provID" />
+    </Key>
+    <Property Name="provID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="provFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="provName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="provAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="provPostOfficeCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="provCountry" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="provPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="provDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="provStatus" Type="Int32" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_provID" FromRole="PROVIDED" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="STAFF">
+    <Key>
+      <PropertyRef Name="staID" />
+    </Key>
+    <Property Name="staID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="staBirthday" Type="DateTime" Precision="0" />
+    <Property Name="staAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="staImg" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="staPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="staSex" Type="Boolean" />
+    <Property Name="staDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="staSalary" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="staPosition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LoginID" Type="Int32" />
+    <Property Name="staStatus" Type="Int32" />
+    <NavigationProperty Name="STAFF_LOGIN" Relationship="Self.FK_LoginID" FromRole="STAFF" ToRole="STAFF_LOGIN" />
+  </EntityType>
+  <EntityType Name="STAFF_LOGIN">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginUserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ORDERR" Relationship="Self.FK_staID" FromRole="STAFF_LOGIN" ToRole="ORDERR" />
+    <NavigationProperty Name="STAFF" Relationship="Self.FK_LoginID" FromRole="STAFF_LOGIN" ToRole="STAFF" />
+  </EntityType>
+  <Association Name="FK_catID">
+    <End Role="CATEGORY" Type="Self.CATEGORY" Multiplicity="0..1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORY">
+        <PropertyRef Name="catID" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="catID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliID">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="cliID" />
+      </Principal>
+      <Dependent Role="ORDERR">
+        <PropertyRef Name="cliID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID_color">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="COLOR" Type="Self.COLOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="COLOR">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID_img">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="IMAGES" Type="Self.IMAGES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="IMAGES">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordID">
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="0..1" />
+    <End Role="INFORMATION_ORDER" Type="Self.INFORMATION_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERR">
+        <PropertyRef Name="ordID" />
+      </Principal>
+      <Dependent Role="INFORMATION_ORDER">
+        <PropertyRef Name="ordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodID">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+    <End Role="INFORMATION_ORDER" Type="Self.INFORMATION_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="INFORMATION_ORDER">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staID">
+    <End Role="STAFF_LOGIN" Type="Self.STAFF_LOGIN" Multiplicity="0..1" />
+    <End Role="ORDERR" Type="Self.ORDERR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STAFF_LOGIN">
+        <PropertyRef Name="LoginID" />
+      </Principal>
+      <Dependent Role="ORDERR">
+        <PropertyRef Name="staID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_provID">
+    <End Role="PROVIDED" Type="Self.PROVIDED" Multiplicity="0..1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVIDED">
+        <PropertyRef Name="provID" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="provID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginID">
+    <End Role="STAFF_LOGIN" Type="Self.STAFF_LOGIN" Multiplicity="0..1" />
+    <End Role="STAFF" Type="Self.STAFF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STAFF_LOGIN">
+        <PropertyRef Name="LoginID" />
+      </Principal>
+      <Dependent Role="STAFF">
+        <PropertyRef Name="LoginID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CSDL_sellPhone_mainEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+    <EntitySet Name="COLOR" EntityType="Self.COLOR" />
+    <EntitySet Name="IMAGES" EntityType="Self.IMAGES" />
+    <EntitySet Name="INFORMATION_ORDER" EntityType="Self.INFORMATION_ORDER" />
+    <EntitySet Name="ORDERR" EntityType="Self.ORDERR" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+    <EntitySet Name="PROVIDED" EntityType="Self.PROVIDED" />
+    <EntitySet Name="STAFF" EntityType="Self.STAFF" />
+    <EntitySet Name="STAFF_LOGIN" EntityType="Self.STAFF_LOGIN" />
+    <AssociationSet Name="FK_catID" Association="Self.FK_catID">
+      <End Role="CATEGORY" EntitySet="CATEGORY" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliID" Association="Self.FK_cliID">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="ORDERR" EntitySet="ORDERR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID_color" Association="Self.FK_prodID_color">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="COLOR" EntitySet="COLOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID_img" Association="Self.FK_prodID_img">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="IMAGES" EntitySet="IMAGES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordID" Association="Self.FK_ordID">
+      <End Role="ORDERR" EntitySet="ORDERR" />
+      <End Role="INFORMATION_ORDER" EntitySet="INFORMATION_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodID" Association="Self.FK_prodID">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="INFORMATION_ORDER" EntitySet="INFORMATION_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staID" Association="Self.FK_staID">
+      <End Role="STAFF_LOGIN" EntitySet="STAFF_LOGIN" />
+      <End Role="ORDERR" EntitySet="ORDERR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_provID" Association="Self.FK_provID">
+      <End Role="PROVIDED" EntitySet="PROVIDED" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginID" Association="Self.FK_LoginID">
+      <End Role="STAFF_LOGIN" EntitySet="STAFF_LOGIN" />
+      <End Role="STAFF" EntitySet="STAFF" />
+    </AssociationSet>
+    <FunctionImport Name="CapNhatTaiKhoan">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="userNew" Mode="In" Type="String" />
+      <Parameter Name="passNew" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="KiemTraLoginMain" ReturnType="Collection(Int32)">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LayDanhSachNhanVien" ReturnType="Collection(CSDL_sellPhone_mainModel.LayDanhSachNhanVien_Result)" />
+    <FunctionImport Name="ThemNhanVien">
+      <Parameter Name="staName" Mode="In" Type="String" />
+      <Parameter Name="staBirthday" Mode="In" Type="DateTime" />
+      <Parameter Name="staAddress" Mode="In" Type="String" />
+      <Parameter Name="staPhone" Mode="In" Type="String" />
+      <Parameter Name="staSex" Mode="In" Type="Boolean" />
+      <Parameter Name="staDescription" Mode="In" Type="String" />
+      <Parameter Name="staStatus" Mode="In" Type="Int32" />
+      <Parameter Name="staSalary" Mode="In" Type="Decimal" />
+      <Parameter Name="staPosition" Mode="In" Type="String" />
+      <Parameter Name="LoginID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThemNhanVienLogin">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemNhaCungCap">
+      <Parameter Name="fullName" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="diaChi" Mode="In" Type="String" />
+      <Parameter Name="maBuuDien" Mode="In" Type="String" />
+      <Parameter Name="quocGia" Mode="In" Type="String" />
+      <Parameter Name="sodienThoai" Mode="In" Type="String" />
+      <Parameter Name="mieuTa" Mode="In" Type="String" />
+      <Parameter Name="trangThai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThemSanPham">
+      <Parameter Name="prodName" Mode="In" Type="String" />
+      <Parameter Name="prodPrice" Mode="In" Type="Decimal" />
+      <Parameter Name="prodSL" Mode="In" Type="Int32" />
+      <Parameter Name="prodCamera" Mode="In" Type="String" />
+      <Parameter Name="prodMenory" Mode="In" Type="Int32" />
+      <Parameter Name="prodReleaseYear" Mode="In" Type="Int32" />
+      <Parameter Name="prodRAM" Mode="In" Type="Int32" />
+      <Parameter Name="prodDescription" Mode="In" Type="String" />
+      <Parameter Name="provID" Mode="In" Type="Int32" />
+      <Parameter Name="catID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThemInfoOrder">
+      <Parameter Name="ordID" Mode="In" Type="Int32" />
+      <Parameter Name="prodID" Mode="In" Type="Int32" />
+      <Parameter Name="infoOrderSL" Mode="In" Type="Int32" />
+      <Parameter Name="inforOrderPrice" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="ThemOrder">
+      <Parameter Name="ordDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ordDescription" Mode="In" Type="String" />
+      <Parameter Name="staID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThemInfoOrderBan">
+      <Parameter Name="ordID" Mode="In" Type="Int32" />
+      <Parameter Name="prodID" Mode="In" Type="Int32" />
+      <Parameter Name="infoOrderSL" Mode="In" Type="Int32" />
+      <Parameter Name="inforOrderPrice" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="ThemOrderBan">
+      <Parameter Name="ordDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ordDescription" Mode="In" Type="String" />
+      <Parameter Name="staID" Mode="In" Type="Int32" />
+      <Parameter Name="cliID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThemKhachHang">
+      <Parameter Name="cliName" Mode="In" Type="String" />
+      <Parameter Name="cliAddress" Mode="In" Type="String" />
+      <Parameter Name="cliCountry" Mode="In" Type="String" />
+      <Parameter Name="cliPostOfficeCode" Mode="In" Type="String" />
+      <Parameter Name="cliPhone" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="LayDanhSachNhanVien_Result">
+    <Property Type="Int32" Name="staID" Nullable="false" />
+    <Property Type="String" Name="staName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="staBirthday" Nullable="true" />
+    <Property Type="String" Name="staAddress" Nullable="true" MaxLength="50" />
+    <Property Type="Binary" Name="staImg" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="staPhone" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="staSex" Nullable="true" />
+    <Property Type="String" Name="staDescription" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="staSalary" Nullable="true" Precision="19" />
+    <Property Type="String" Name="staPosition" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="LoginID" Nullable="true" />
+    <Property Type="Int32" Name="staStatus" Nullable="true" />
+  </ComplexType>
+</Schema>
